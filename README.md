@@ -11,7 +11,7 @@
 // @grant        none
 // ==/UserScript==
 
-let url = "https://github.com/Candorada/TamperMonkey/raw/refs/heads/main/Polytrack%20Car%20Picker.js"
+let url = "https://raw.githubusercontent.com/Candorada/TamperMonkey/refs/heads/main/PolytrackCarPicker.js"
 async function tamper() {
 	try{
 	await fetch(url)
