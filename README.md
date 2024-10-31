@@ -11,7 +11,7 @@
 // @grant        none
 // ==/UserScript==
 
-let url = "https://raw.githubusercontent.com/Candorada/TamperMonkey/refs/heads/main/RainBowMclarin"
+let url = "https://raw.githubusercontent.com/Candorada/TamperMonkey/refs/heads/main/polyCartRainbowCar.js"
 async function tamper() {
 	try{
 	await fetch(url)
@@ -53,7 +53,7 @@ rainbow Mclarin
 // @grant        none
 // ==/UserScript==
 
-let url = "https://raw.githubusercontent.com/Candorada/TamperMonkey/refs/heads/main/polyCartRainbowCar.js"
+let url = "https://raw.githubusercontent.com/Candorada/TamperMonkey/refs/heads/main/RainBowMclarin.js"
 async function tamper() {
 	try{
 	await fetch(url)
