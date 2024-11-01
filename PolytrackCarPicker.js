@@ -249,6 +249,30 @@ window.carModels = [
       "uploadedAt": "2024-10-31T22:09:28.000Z"
     }
   ]
+  function fetchCarList(){
+    fetch("https://api.jsonbin.io/v3/b/6724174dad19ca34f8c1db84").then((r)=>{
+        if(r.ok){
+            r.json().then((d)=>{
+                window.carModels = d.record
+                window.localStorage.carModelList = JSON.stringify([Date.now(),d.record])
+            })
+        }
+    })
+  }
+  window.carListUpdate_withDelay = ()=>{
+    if(window.localStorage.carModelList){
+        let json = JSON.parse(window.localStorage.carModelList)
+        if(Date.now() - json[0] > 1000  * 60 * 60){
+            fetchCarList()
+        }else{
+            window.carModels = json[1]
+        }
+      }else{
+        fetchCarList()
+      }
+  }
+  carListUpdate_withDelay()
+  
 window.carList = [];
 ( () => {
     var e = {
@@ -28852,6 +28876,7 @@ window.carList = [];
                 carSelectMenu.style.backgroundColor = "var(--surface-color)";
                 modButtonCarChooser.addEventListener("click", ( () => {
                     i.playUIClick(),
+                    carListUpdate_withDelay();
                     carSelectMenu.style.visibility = carSelectMenu.style.visibility == "visible" ? "hidden" : "visible";
                 }
                 )),
