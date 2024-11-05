@@ -249,7 +249,7 @@ window.carModels = [
       "uploadedAt": "2024-10-31T22:09:28.000Z"
     }
   ]
-  function fetchCarList(){
+  window.fetchCarList= ()=>{
     fetch("https://api.jsonbin.io/v3/b/6724174dad19ca34f8c1db84").then((r)=>{
         if(r.ok){
             r.json().then((d)=>{
